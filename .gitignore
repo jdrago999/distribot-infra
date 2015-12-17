@@ -1,0 +1,13 @@
+coverage/
+*.png
+.vagrant
+.byebug_history
+cool/
+ws/
+bin/killer.rb
+channel.rb
+log/
+tmp/
+.env
+*.gem
+

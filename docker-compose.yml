@@ -1,0 +1,19 @@
+
+infra:
+  build: .
+  dockerfile: ./Dockerfile
+  environment:
+    - TERM=xterm
+    - RABBITMQ_USERNAME=distribot
+    - RABBITMQ_PASSWORD=distribot
+  working_dir: /var/www/distribot
+  command: bash -c "./provision/infra.sh && tail -f /dev/null"
+  ports:
+    # RabbitMQ
+    - 5672
+    # RabbitMQ Admin
+    - 15672
+    # Redis
+    - 6379
+    # Nginx (to ElasticSearch and Kibana)
+    - 443
